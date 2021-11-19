@@ -179,8 +179,9 @@ def test_e2e_core_metadata_cisco_3850(dd_agent_check):
             u'snmp_profile:cisco-3850',
         ],
         u'vendor': 'cisco',
-        u'version': u'03.06.06',
+        u'version': u'03.06.06E',
         u'serial_number': u'FOCXXXXXXXX',
+        u'model': u'CAT3K_CAA-UNIVERSALK9-M',
     }
     assert device == actual_device
 
