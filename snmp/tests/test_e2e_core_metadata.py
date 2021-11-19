@@ -41,8 +41,8 @@ def test_e2e_core_metadata_f5(dd_agent_check):
             u'devices': [
                 {
                     u'description': u'BIG-IP Virtual Edition : Linux '
-                                    u'3.10.0-862.14.4.el7.ve.x86_64 : BIG-IP software '
-                                    u'release 15.0.1, build 0.0.11',
+                    u'3.10.0-862.14.4.el7.ve.x86_64 : BIG-IP software '
+                    u'release 15.0.1, build 0.0.11',
                     u'id': device_id,
                     u'id_tags': [
                         u'device_namespace:default',
@@ -161,15 +161,12 @@ def test_e2e_core_metadata_cisco_3850(dd_agent_check):
     actual_device = event1['devices'][0]
     device = {
         u'description': u'Cisco IOS Software, IOS-XE Software, Catalyst L3 Switch '
-                        u'Software (CAT3K_CAA-UNIVERSALK9-M), Version 03.06.06E RELEASE '
-                        u'SOFTWARE (fc1) Technical Support: '
-                        u'http://www.cisco.com/techsupport Copyright (c) 1986-2016 by '
-                        u'Cisco Systems, Inc. Compiled Sat 17-Dec-',
+        u'Software (CAT3K_CAA-UNIVERSALK9-M), Version 03.06.06E RELEASE '
+        u'SOFTWARE (fc1) Technical Support: '
+        u'http://www.cisco.com/techsupport Copyright (c) 1986-2016 by '
+        u'Cisco Systems, Inc. Compiled Sat 17-Dec-',
         u'id': device_id,
-        u'id_tags': [
-            u'device_namespace:default',
-            u'snmp_device:' + device_ip
-        ],
+        u'id_tags': [u'device_namespace:default', u'snmp_device:' + device_ip],
         u'ip_address': device_ip,
         u'name': 'Cat-3850-4th-Floor.companyname.local',
         u'profile': 'cisco-3850',
@@ -180,7 +177,7 @@ def test_e2e_core_metadata_cisco_3850(dd_agent_check):
             u'device_vendor:cisco',
             u'snmp_device:' + device_ip,
             u'snmp_host:Cat-3850-4th-Floor.companyname.local',
-            u'snmp_profile:cisco-3850'
+            u'snmp_profile:cisco-3850',
         ],
         u'vendor': 'cisco',
         u'version': u'03.06.06',
@@ -195,13 +192,11 @@ def test_e2e_core_metadata_cisco_3850(dd_agent_check):
         u'admin_status': 1,
         u'description': u'GigabitEthernet0/0',
         u'device_id': u'default:172.19.0.2',
-        u'id_tags': [
-            u'interface:Gi0/0'
-        ],
+        u'id_tags': [u'interface:Gi0/0'],
         u'index': 1,
         u'mac_address': u'0x000000000000',
         u'name': u'Gi0/0',
-        u'oper_status': 2
+        u'oper_status': 2,
     }
     assert interface == actual_interface
 
@@ -244,7 +239,7 @@ def test_e2e_core_metadata_cisco_catalyst(dd_agent_check):
             u'device_vendor:cisco',
             u'snmp_device:' + device_ip,
             u'snmp_host:catalyst-6000.example',
-            u'snmp_profile:cisco-catalyst'
+            u'snmp_profile:cisco-catalyst',
         ],
         u'vendor': u'cisco',
         u'serial_number': u'SCA044001J9',
