@@ -181,6 +181,7 @@ def test_e2e_core_metadata_cisco_3850(dd_agent_check):
         ],
         u'vendor': 'cisco',
         u'version': u'03.06.06',
+        u'serial_number': u'FOCXXXXXXXX',
     }
     assert device == actual_device
 
