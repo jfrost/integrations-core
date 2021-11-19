@@ -147,7 +147,6 @@ def test_e2e_core_metadata_cisco_3850(dd_agent_check):
     aggregator = dd_agent_check(config, rate=False)
 
     device_ip = instance['ip_address']
-    device_id = u'default:' + device_ip
 
     events = aggregator.get_event_platform_events("network-devices-metadata", parse_json=True)
 
@@ -165,7 +164,7 @@ def test_e2e_core_metadata_cisco_3850(dd_agent_check):
         u'SOFTWARE (fc1) Technical Support: '
         u'http://www.cisco.com/techsupport Copyright (c) 1986-2016 by '
         u'Cisco Systems, Inc. Compiled Sat 17-Dec-',
-        u'id': device_id,
+        u'id': u'default:' + device_ip,
         u'id_tags': [u'device_namespace:default', u'snmp_device:' + device_ip],
         u'ip_address': device_ip,
         u'name': 'Cat-3850-4th-Floor.companyname.local',
@@ -192,7 +191,7 @@ def test_e2e_core_metadata_cisco_3850(dd_agent_check):
     interface = {
         u'admin_status': 1,
         u'description': u'GigabitEthernet0/0',
-        u'device_id': u'default:172.19.0.2',
+        u'device_id': u'default:' + device_ip,
         u'id_tags': [u'interface:Gi0/0'],
         u'index': 1,
         u'mac_address': u'0x000000000000',
