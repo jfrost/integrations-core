@@ -130,3 +130,34 @@ def test_e2e_core_metadata_f5(dd_agent_check):
         },
     ]
     assert_network_devices_metadata(aggregator, events)
+
+
+def test_e2e_core_metadata_cisco_generic(dd_agent_check):
+    config = common.generate_container_instance_config([])
+    instance = config['instances'][0]
+    instance.update(
+        {
+            'community_string': 'cisco-3850',
+            'loader': 'core',
+        }
+    )
+
+    aggregator = dd_agent_check(config, rate=False)
+
+    device_ip = instance['ip_address']
+    device_id = u'default:' + device_ip
+
+    events = [
+        {
+            u'collect_timestamp': 0,
+            u'devices': [
+                {
+                    u'id': device_id,
+                },
+            ],
+            u'interfaces': [],
+            u'namespace': u'default',
+            u'subnet': u'',
+        },
+    ]
+    assert_network_devices_metadata(aggregator, events)
